@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La lettre U 🏭👕</title>
+<style>
+  :root{
+    --bg:#f3f0ff; --card:#ffffff; --text:#2d2a26; --accent:#8a63d2; --accent2:#c2455e; --accent3:#3fa9c9;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    box-sizing:border-box;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#20192b; --card:#2c2438; --text:#f1ecfa; }
+  }
+  :root[data-theme="dark"]{ --bg:#20192b; --card:#2c2438; --text:#f1ecfa; }
+  *{box-sizing:border-box;}
+  html,body{height:100%;margin:0;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Comic Sans MS','Baloo 2',system-ui,-apple-system,sans-serif;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    min-height:100%; padding:24px 16px; text-align:center; overflow-x:hidden;
+  }
+  h1{font-size:clamp(1.2rem,5vw,1.9rem); margin:0 0 16px;}
+  .stage{width:100%; max-width:420px;}
+  .card{
+    background:var(--card); border-radius:28px; padding:26px 20px 22px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    display:none; flex-direction:column; align-items:center; gap:8px;
+    animation:pop .5s ease;
+  }
+  .card.active{display:flex;}
+  @keyframes pop{ from{transform:scale(.85);opacity:0;} to{transform:scale(1);opacity:1;} }
+  svg{width:min(50vw,190px); height:auto; margin-bottom:4px;}
+  .letterU{
+    font-size:clamp(3rem,16vw,5.5rem); font-weight:900; color:var(--accent);
+    line-height:1; margin:0 0 6px;
+  }
+  .word{font-size:clamp(1.6rem,7vw,2.4rem); font-weight:800; color:var(--accent); margin:0;}
+  .word.uniforme{color:var(--accent2);}
+  .phon{font-size:1rem; opacity:.75; margin:0 0 4px;}
+  .en{font-size:.9rem; opacity:.6; margin:0 0 8px;}
+  button.speak{
+    border:none; border-radius:999px; padding:13px 26px; font-size:1.1rem; font-weight:700;
+    background:var(--accent); color:#fff; cursor:pointer; box-shadow:0 6px 14px rgba(0,0,0,.2);
+    display:flex; align-items:center; gap:8px;
+  }
+  .card[data-slide="2"] button.speak{background:var(--accent2);}
+  button.speak:active{transform:scale(.96);}
+  .nav{display:flex; gap:18px; margin-top:20px; align-items:center;}
+  .nav button.arrow{
+    border:none; background:var(--card); color:var(--text); width:46px; height:46px; border-radius:50%;
+    font-size:1.2rem; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,.15);
+  }
+  .dots{display:flex; gap:8px;}
+  .dot{width:10px; height:10px; border-radius:50%; background:#ccc;}
+  .dot.on{background:var(--accent);}
+</style>
+</head>
+<body>
+<h1>🔤 La lettre U</h1>
+<div class="stage">
+
+  <div class="card active" data-slide="0" data-word="u" data-lang="fr-FR">
+    <p class="letterU">U u</p>
+    <p class="phon">🗣️ "ew"</p>
+    <p class="en">(the letter U)</p>
+    <button class="speak" onclick="say('u','fr-FR')">🔊 Écouter</button>
+  </div>
+
+  <div class="card" data-slide="1" data-word="usine" data-lang="fr-FR">
+    <svg viewBox="0 0 200 200">
+      <rect x="35" y="110" width="130" height="55" fill="#8a63d2"/>
+      <rect x="50" y="70" width="25" height="45" fill="#7451b8"/>
+      <rect x="85" y="50" width="25" height="65" fill="#7451b8"/>
+      <path d="M85 50 q0 -20 12 -20 q12 0 12 20" stroke="#b8a8e0" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <circle cx="60" cy="135" r="10" fill="#fff" opacity="0.8"/>
+      <circle cx="100" cy="135" r="10" fill="#fff" opacity="0.8"/>
+      <circle cx="140" cy="135" r="10" fill="#fff" opacity="0.8"/>
+    </svg>
+    <p class="word">U comme usine</p>
+    <p class="phon">🗣️ ew-ZEEN</p>
+    <p class="en">(factory)</p>
+    <button class="speak" onclick="say('usine','fr-FR')">🔊 Écouter</button>
+  </div>
+
+  <div class="card" data-slide="2" data-word="uniforme" data-lang="fr-FR">
+    <svg viewBox="0 0 200 200">
+      <circle cx="100" cy="55" r="24" fill="#f2c9a0"/>
+      <path d="M60 165 v-45 q0 -25 40 -25 q40 0 40 25 v45 z" fill="#c2455e"/>
+      <path d="M75 100 l-20 15 l10 15 l10 -10z" fill="#a5384c"/>
+      <path d="M125 100 l20 15 l-10 15 l-10 -10z" fill="#a5384c"/>
+      <rect x="92" y="100" width="16" height="45" fill="#fff" opacity="0.85"/>
+    </svg>
+    <p class="word uniforme">U comme uniforme</p>
+    <p class="phon">🗣️ ew-nee-FORM</p>
+    <p class="en">(uniform)</p>
+    <button class="speak" onclick="say('uniforme','fr-FR')">🔊 Écouter</button>
+  </div>
+
+  <div class="nav">
+    <button class="arrow" onclick="go(-1)">◀</button>
+    <div class="dots">
+      <span class="dot on" id="dot0"></span>
+      <span class="dot" id="dot1"></span>
+      <span class="dot" id="dot2"></span>
+    </div>
+    <button class="arrow" onclick="go(1)">▶</button>
+  </div>
+</div>
+
+<script>
+let idx = 0;
+const cards = document.querySelectorAll('.card');
+const dots = document.querySelectorAll('.dot');
+
+function show(i){
+  cards.forEach((c,n)=>c.classList.toggle('active', n===i));
+  dots.forEach((d,n)=>d.classList.toggle('on', n===i));
+  idx = i;
+  setTimeout(()=> say(cards[i].dataset.word, cards[i].dataset.lang), 350);
+}
+function go(delta){
+  let n = (idx + delta + cards.length) % cards.length;
+  show(n);
+}
+function say(word, lang){
+  try{
+    if(!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(word);
+    u.lang = lang;
+    u.rate = 0.75;
+    window.speechSynthesis.speak(u);
+  }catch(e){ console.error('speech error', e); }
+}
+window.addEventListener('load', ()=> setTimeout(()=> say('u','fr-FR'), 600));
+</script>
+</body>
+</html>
